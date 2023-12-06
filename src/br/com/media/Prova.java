@@ -1,4 +1,4 @@
-package br.com.classe;
+package br.com.media;
 
 public class Prova {
 

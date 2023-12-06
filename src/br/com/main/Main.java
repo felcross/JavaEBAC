@@ -1,4 +1,6 @@
-package br.com.classe;
+package br.com.main;
+
+import br.com.media.Prova;
 
 public class Main {
 
