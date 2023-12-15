@@ -8,7 +8,7 @@ package br.com.classe;
  * 
  * @version 1.0
  */
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa>  {
 
 	public String nome;
 	public String sexo;
@@ -51,11 +51,17 @@ public class Pessoa {
 	public String toString() {
 		return "Pessoa [Nome=" + nome + ", Sexo=" + sexo + "]";
 	}
+
+
+
+	@Override
+	public int compareTo(Pessoa pessoa) {
+		
+		return this.nome.compareTo(pessoa.getNome());
+	}
 	
 	
-	 public int compareTo(Pessoa pessoa) {
-	        return this.nome.compareTo(pessoa.getNome());
-	    }   	
+	
 
 
 	
