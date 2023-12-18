@@ -15,30 +15,30 @@ public class Main3 {
 		Scanner scanner = new Scanner(System.in);
 
 		List<String> lista = new ArrayList<String>();
+	//	List<String> lista1 = new ArrayList<String>();
 
 		 
-      	System.out.println("Insira nomes para lista");
-
-		System.out.println("Insira Nomes");
+      	System.out.println("Insira nomes para lista usando -M no final");
 
 		String nome = scanner.nextLine();
         
-		String[] separados = nome.split("-M",1);
+		String[] separados = nome.split("-M");
 		
-		String[] separados2 = nome.split("-F",2);
+		//String[] separados2 = nome.split("-F");
 
 
 		
 		
 		lista.addAll(Arrays.asList(separados));
 		
-		lista.addAll(Arrays.asList(separados2));
+		//lista1.addAll(Arrays.asList(separados2));
 
 	      Collections.sort(lista);
+	    //  Collections.sort(lista1);
 
 	
 		
-
+	
 		for (String nome1 : lista) {
      
             System.out.println(nome1);
