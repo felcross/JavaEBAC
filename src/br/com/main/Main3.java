@@ -15,36 +15,50 @@ public class Main3 {
 		Scanner scanner = new Scanner(System.in);
 
 		List<String> lista = new ArrayList<String>();
-	//	List<String> lista1 = new ArrayList<String>();
+		List<String> listaf = new ArrayList<String>();
+		
 
 		 
       	System.out.println("Insira nomes para lista usando -M no final");
-
-		String nome = scanner.nextLine();
-        
-		String[] separados = nome.split("-M");
+     		
 		
-		//String[] separados2 = nome.split("-F");
-
-
+		String ler = scanner.nextLine();  
+		String [] array = ler.split("-M");
 		
+    System.out.println("Insira nomes para lista usando -F no final");
+      String lerF = scanner.nextLine();  
+		String [] arrayF = lerF.split("-F"); 
 		
-		lista.addAll(Arrays.asList(separados));
-		
-		//lista1.addAll(Arrays.asList(separados2));
-
-	      Collections.sort(lista);
-	    //  Collections.sort(lista1);
-
-	
-		
+	System.out.println("Grupo de nomes masculinos");
+	lista.addAll(Arrays.asList(array));
+	Collections.sort(lista);
 	
 		for (String nome1 : lista) {
-     
+		    
             System.out.println(nome1);
 
         }
 		
+		System.out.println("----------------------------------");
+		
+		System.out.println("Grupo de nomes femininos");
+		listaf.addAll(Arrays.asList(arrayF));
+		Collections.sort(lista);
+		
+		for (String nome1 : listaf) {
+		    
+            System.out.println(nome1);
+
+        }
+		
+		
+		
+		
+
+
+	
+		
+	
 	
 		 
 
