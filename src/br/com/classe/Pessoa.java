@@ -1,6 +1,7 @@
 package br.com.classe;
 
-
+import java.util.List;
+import java.util.Objects;
 
 /**
  * 
@@ -16,8 +17,6 @@ public class Pessoa implements Comparable<Pessoa>  {
 
 	 	
 	public Pessoa() {
-			this.nome = nome;
-			this.sexo = sexo;
 		
 	 }
 
@@ -55,11 +54,34 @@ public class Pessoa implements Comparable<Pessoa>  {
 
 
 	@Override
-	public int compareTo(Pessoa pessoa) {
-		
-		return this.nome.compareTo(pessoa.getNome());
+	public int compareTo(Pessoa o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, sexo);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		return Objects.equals(nome, other.nome) && Objects.equals(sexo, other.sexo);
+	}
+
+
+
 	
 	
 

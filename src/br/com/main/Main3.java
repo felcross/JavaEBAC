@@ -12,50 +12,53 @@ import br.com.classe.Pessoa;
 public class Main3 {
 
 	public static void main(String[] args) {
+
+
 		Scanner scanner = new Scanner(System.in);
-
-		List<String> lista = new ArrayList<String>();
-		List<String> listaf = new ArrayList<String>();
+        Pessoa pessoa = new Pessoa();
+		List<Pessoa> lista = new ArrayList<Pessoa>();
 		
-
-		 
-      	System.out.println("Insira nomes para lista usando -M no final");
-     		
 		
-		String ler = scanner.nextLine();  
-		String [] array = ler.split("-M");
-		
-    System.out.println("Insira nomes para lista usando -F no final");
-      String lerF = scanner.nextLine();  
-		String [] arrayF = lerF.split("-F"); 
-		
-	System.out.println("Grupo de nomes masculinos");
-	lista.addAll(Arrays.asList(array));
-	Collections.sort(lista);
+     
+			System.out.println("nome");
+			pessoa.nome = scanner.nextLine();
+	       System.out.println("Masculino digitar M, feminino Digitar F");		
+			pessoa.sexo = scanner.nextLine();
 	
-		for (String nome1 : lista) {
-		    
-            System.out.println(nome1);
+	
+	 if (pessoa.sexo.contains("m")) {
+		 
+		 lista.add(pessoa);
+			Collections.sort(lista);
+	System.out.println("Nome masculino");  
+		 for (Pessoa nome1 : lista) {
+			    
+	            System.out.println(nome1.nome);
 
-        }
-		
-		System.out.println("----------------------------------");
-		
-		System.out.println("Grupo de nomes femininos");
-		listaf.addAll(Arrays.asList(arrayF));
-		Collections.sort(lista);
-		
-		for (String nome1 : listaf) {
-		    
-            System.out.println(nome1);
+	        }
+		 
+     } else if (pessoa.sexo.contains("f")) {
+		 
+		 lista.add(pessoa);
+			Collections.sort(lista);
+	System.out.println("Nome feminino");       
+		 for (Pessoa nome1 : lista) {
+			    
+	            System.out.println(nome1.nome);
 
-        }
-		
-		
-		
+	        }
+		 
+     } else {
+    	 
+    	 System.out.println("Parametro invalido");       
+     }
+	
+	
 		
 
-
+		
+		
+		
 	
 		
 	
