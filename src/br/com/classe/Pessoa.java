@@ -9,78 +9,30 @@ import java.util.Objects;
  * 
  * @version 1.0
  */
-public class Pessoa implements Comparable<Pessoa>  {
+public abstract class Pessoa  {
 
-	public String nome;
-	public String sexo;
+	private String nome;
+	private String SobreNome;
 	
-
-	 	
-	public Pessoa() {
-		
-	 }
-
-
-
+	
 	public String getNome() {
 		return nome;
 	}
-
-
-
 	public void setNome(String nome) {
-		nome = nome;
+		this.nome = nome;
 	}
-
-
-
-	public String getSexo() {
-		return sexo;
+	public String getSobreNome() {
+		return SobreNome;
 	}
-
-
-
-	public void setSexo(String sexo) {
-		sexo = sexo;
+	public void setSobreNome(String sobreNome) {
+		SobreNome = sobreNome;
 	}
-
-
-
+	
+	
 	@Override
 	public String toString() {
-		return "Pessoa [Nome=" + nome + ", Sexo=" + sexo + "]";
+		return "Pessoa [nome=" + nome + ", SobreNome=" + SobreNome + "]";
 	}
-
-
-
-	@Override
-	public int compareTo(Pessoa o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(nome, sexo);
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pessoa other = (Pessoa) obj;
-		return Objects.equals(nome, other.nome) && Objects.equals(sexo, other.sexo);
-	}
-
-
 
 	
 	
