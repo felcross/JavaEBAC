@@ -19,15 +19,19 @@ public class Main5 {
 		pj.setSobreNome("da Silva");
 		
 		System.out.println("Atributos herdados da classe abstrata Pessoa");
-		System.out.println(pf.getNome());
-		System.out.println(pf.getSobreNome());
-		System.out.println("Atributos vindo da classe PessoaFisica extendida(Herdada) de Pessoa");
+		System.out.println("-----");	
+		System.out.println("nome: "+pf.getNome());
+		System.out.println("Sobrenome: "+pf.getSobreNome());
+		System.out.println("-----");
+		System.out.println("Atributos vindo da classe PessoaFisica extendida de Pessoa");
 		System.out.println("CPF:  "+pf.getCpf());
 		System.out.println("------------------------------------------------");	
 		System.out.println("Atributos herdados da classe abstrata Pessoa");
-		System.out.println(pj.getNome());
-		System.out.println(pj.getSobreNome());
-		System.out.println("Atributos vindo da classe PessoaJuridica extendida(Herdada) de Pessoa");
+		System.out.println("-----");	
+		System.out.println("nome: "+pj.getNome());
+		System.out.println("Sobrenome: "+pj.getSobreNome());
+		System.out.println("-----");
+		System.out.println("Atributos vindo da classe PessoaJuridica extendida de Pessoa");
 		System.out.println("CNPJ:  "+pj.getCnpj());
 		
 		
