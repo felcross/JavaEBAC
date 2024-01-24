@@ -1,5 +1,7 @@
 package br.com.main;
 
+import java.util.Objects;
+
 import javax.swing.JOptionPane;
 
 import br.com.dao.ClienteMapDAO;
@@ -12,7 +14,7 @@ public class App {
 	private static IClienteDAO iClienteDAO;
 
 	  public static void main(String args[]) {
-	        iClienteDAO = new ClienteMapDAO();
+	          iClienteDAO = new ClienteMapDAO();
 
 	        String opcao = JOptionPane.showInputDialog(null,
 	                "Digite 1 para cadastro, 2 para consultar, 3 para exclusão, 4 para alteração ou 5 para sair",
@@ -61,6 +63,8 @@ public class App {
 	        }
 
 	    }
+	  
+	  //metodos
 
 	    private static void atualizar(String dados) {
 	        String[] dadosSeparados = dados.split(",");
@@ -85,8 +89,30 @@ public class App {
 	    }
 
 	    private static void cadastrar(String dados) {
-	        String[] dadosSeparados = dados.split(",");
-	        Cliente cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3],dadosSeparados[4],dadosSeparados[5],dadosSeparados[6]);
+	        String[] dadosSeparados = dados.split(",");	               	        
+	        Cliente cliente = new Cliente();
+	           if(isCamposValidos(dadosSeparados) == true) {
+	        	    cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3],dadosSeparados[4],dadosSeparados[5],dadosSeparados[6]);
+	        	    System.out.println("entrou aqui 1");
+	           } else {
+	        	   JOptionPane.showMessageDialog(null, "Dados estão nulos", "Erro",JOptionPane.INFORMATION_MESSAGE);
+	        	   System.out.println("entrou aqui 2");
+	           }
+	             
+	           System.out.println("entrou aqui 3");
+	       
+	        
+	        //  Cliente cliente = new Cliente();
+	       /* for (String cli : dadosSeparados) {	
+	        	if (cli != null)
+	            {
+	        	  cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3],dadosSeparados[4],dadosSeparados[5],dadosSeparados[6]);	          
+	               
+	            } else {
+		            JOptionPane.showMessageDialog(null, "Dados estão nulos", "Erro",JOptionPane.INFORMATION_MESSAGE);
+		        }
+	        }*/
+	        
 	        Boolean isCadastrado = iClienteDAO.cadastrar(cliente);
 	        if (isCadastrado) {
 	            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso ", "Sucesso",JOptionPane.INFORMATION_MESSAGE);
@@ -119,9 +145,9 @@ public class App {
 
 	    private static void sair() {
 	        String clientesCadastrados = "";
-	        for (Cliente cliente : iClienteDAO.buscarTodos()) {
+	      /*  for (Cliente cliente : iClienteDAO.buscarTodos()) {
 	            clientesCadastrados += cliente.toString() + "\n";
-	        }
+	        }*/
 
 	        JOptionPane.showMessageDialog(null, "Clientes cadastrados: " + clientesCadastrados, "Até logo",JOptionPane.INFORMATION_MESSAGE);
 	        System.exit(0);
@@ -141,5 +167,20 @@ public class App {
 	        }
 	        return false;
 	    }
+	    
+	    private static boolean isCamposValidos(String ...campos) {
+	    	
+	    	 for (int i = 0; i < campos.length; i++) {
+	    		 
+	    		 if(campos[i] == null || "".equals(campos[i])) {
+	    	      System.out.println("entrou no validar nulo");
+	    		 return false;}
+	         }
+	    	   
+	    	  System.out.println("veio pro true");  	    	
+	    	return true;
+	    };
 
+	    
+	    
 	}
