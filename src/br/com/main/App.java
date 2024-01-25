@@ -80,6 +80,8 @@ public class App {
 
 	    private static void consultar(String dados) {
 	        Cliente cliente = iClienteDAO.consultar(Long.parseLong(dados));
+	      
+	        
 	        if (cliente != null) {
 	            JOptionPane.showMessageDialog(null, "Cliente encontrado com sucesso: " + cliente.toString(), "Sucesso",JOptionPane.INFORMATION_MESSAGE);
 	        } else {
@@ -91,11 +93,22 @@ public class App {
 	    private static void cadastrar(String dados) {
 	        String[] dadosSeparados = dados.split(",");	               	        
 	        Cliente cliente = new Cliente();
-	           if(isCamposValidos(dadosSeparados) == true) {
+	           if(isCamposValidos(dadosSeparados)) {
 	        	    cliente = new Cliente(dadosSeparados[0],dadosSeparados[1],dadosSeparados[2],dadosSeparados[3],dadosSeparados[4],dadosSeparados[5],dadosSeparados[6]);
 	        	    System.out.println("entrou aqui 1");
+	        	    
+	        	    Boolean isCadastrado = iClienteDAO.cadastrar(cliente);
+	    	        if (isCadastrado) {
+	    	            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso ", "Sucesso",JOptionPane.INFORMATION_MESSAGE);
+	    	        } else {
+	    	            JOptionPane.showMessageDialog(null, "Cliente já se encontra cadastrado", "Erro",JOptionPane.INFORMATION_MESSAGE);
+	    	        }
+	    	        
+	        	    
+	        	    
+	        	    
 	           } else {
-	        	   JOptionPane.showMessageDialog(null, "Dados estão nulos", "Erro",JOptionPane.INFORMATION_MESSAGE);
+	        	   JOptionPane.showMessageDialog(null, "Dados estão Vazios", "Erro",JOptionPane.INFORMATION_MESSAGE);
 	        	   System.out.println("entrou aqui 2");
 	           }
 	             
@@ -113,12 +126,7 @@ public class App {
 		        }
 	        }*/
 	        
-	        Boolean isCadastrado = iClienteDAO.cadastrar(cliente);
-	        if (isCadastrado) {
-	            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso ", "Sucesso",JOptionPane.INFORMATION_MESSAGE);
-	        } else {
-	            JOptionPane.showMessageDialog(null, "Cliente já se encontra cadastrado", "Erro",JOptionPane.INFORMATION_MESSAGE);
-	        }
+	       
 
 	    }
 
@@ -144,12 +152,8 @@ public class App {
 	    }
 
 	    private static void sair() {
-	        String clientesCadastrados = "";
-	      /*  for (Cliente cliente : iClienteDAO.buscarTodos()) {
-	            clientesCadastrados += cliente.toString() + "\n";
-	        }*/
-
-	        JOptionPane.showMessageDialog(null, "Clientes cadastrados: " + clientesCadastrados, "Até logo",JOptionPane.INFORMATION_MESSAGE);
+	       
+	        JOptionPane.showMessageDialog(null, "Saindo...", "Até logo",JOptionPane.INFORMATION_MESSAGE);
 	        System.exit(0);
 	    }
 
@@ -174,13 +178,25 @@ public class App {
 	    		 
 	    		 if(campos[i] == null || "".equals(campos[i])) {
 	    	      System.out.println("entrou no validar nulo");
-	    		 return false;}
+	    		 return false;
+	    		 } else if(campos.length <= 6) {
+	    			 JOptionPane.showMessageDialog(null, "Os Dados estão nulos ou vazios", "Até logo",JOptionPane.INFORMATION_MESSAGE);
+	 		        System.exit(0);
+	    			 System.out.println("entrou aqui");
+	    		 }
+	    		 
+	    		 
+	    		 		 
 	         }
-	    	   
+	    	 
+	    	 
+		       
+		        
 	    	  System.out.println("veio pro true");  	    	
 	    	return true;
 	    };
 
+	    
 	    
 	    
 	}
