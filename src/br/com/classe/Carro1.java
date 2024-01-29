@@ -7,7 +7,7 @@ package br.com.classe;
  * 
  * @version 1.0
  */
-public class Carro {
+public class Carro1 {
 
 	public String marca;
 	public boolean  ligar;
@@ -15,7 +15,7 @@ public class Carro {
 	public Integer freio;
 
 	 	
-	public Carro(String marca, boolean ligar) {
+	public Carro1(String marca, boolean ligar) {
 			this.marca = marca;
 			this.ligar = false;
 			this.velocidadeAtual = 0;
