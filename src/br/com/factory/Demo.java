@@ -8,6 +8,7 @@ public class Demo {
 		  Fabrica fabrica = getFactory(cli);
 		  fabrica.criar(cli.requererNota());
 		  
+		  
 	  }
 
 	private static Fabrica getFactory(Cliente cli) {
