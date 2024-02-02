@@ -21,7 +21,7 @@ public class Main6 {
 	
 	 lista.add(carro1);
 	 lista.add(carro2);
-	 imprimirFrutas(lista);
+	 imprimir(lista);
 	
 	
 	
@@ -35,7 +35,7 @@ public class Main6 {
 
 }
 	
-	public static void imprimirFrutas(List<? extends Carro> lista) {
+	public static void imprimir(List<? extends Carro> lista) {
         for (Carro carro : lista) {
             System.out.println(carro.toString());
         }
