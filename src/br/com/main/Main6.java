@@ -1,7 +1,7 @@
 package br.com.main;
 
-import br.com.classe.CarroNovo;
-import br.com.classe.CarroVelho;
+import br.com.classe.Civic;
+import br.com.classe.Fusca;
 
 
 import java.util.ArrayList;
@@ -13,31 +13,32 @@ import br.com.classe.Carro;
 public class Main6 {
 
 	public static void main(String[] args) {
-	List<Carro> listaCarros = new ArrayList();    
-	 listaCarros.add(new CarroVelho("Fusca"));
+	Carro carro1 = new Fusca("volkswagen");
+	Carro carro2 = new Civic("Honda");
 	
-	
-	
-		Carro fusca = new CarroVelho("Fusca");
-		Carro Uno = new CarroVelho("Uno");
-		Carro civic = new CarroNovo("Civic");
-		Carro honda = new CarroNovo("Honda");
-		
-		
-		
-		listaCarros.add(fusca);
-		
-		for(Object car : listaCarros) {
-			
-			
-		}
-		
-	}
-	
-	/*public static void imprimirFrutas(List<? extends Fruta> lista) {
-        for (Fruta fruta : lista) {
-            System.out.println(fruta);
-        }
-    }*/
 
+	List<Carro> lista = new ArrayList();
+	
+	 lista.add(carro1);
+	 lista.add(carro2);
+	 imprimirFrutas(lista);
+	
+	
+	
+	
+		
+		
+		
+
+	
+	
+
+}
+	
+	public static void imprimirFrutas(List<? extends Carro> lista) {
+        for (Carro carro : lista) {
+            System.out.println(carro.toString());
+        }
+    }	
+	
 }
