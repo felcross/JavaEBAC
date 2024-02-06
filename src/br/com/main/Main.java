@@ -2,13 +2,34 @@ package br.com.main;
 
 import java.util.Scanner;
 
+import br.com.classe.Tabela;
 import br.com.media.Prova;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
+	
+		
+		 Tabela table = new Tabela();
+		 
+		 
+		 System.out.println(table.toString());
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*	Scanner scanner = new Scanner(System.in);
 		Prova prova = new Prova();
 		
 		System.out.println("Insira suas notas");
@@ -34,7 +55,7 @@ public class Main {
 		} else {
 			System.out.println("Sua media é:  "+ mediaTotal);
 			System.out.println("Voce está Reprovado");
-		}
+		}*/
 	
    
 		
