@@ -1,7 +1,10 @@
 package br.com.main;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.util.Scanner;
 
+import br.com.classe.Itabela;
 import br.com.classe.Tabela;
 import br.com.media.Prova;
 
@@ -11,10 +14,48 @@ public class Main {
 		
 	
 		
-		 Tabela table = new Tabela();
+		Tabela table = new Tabela();
+		
+		Class clazz = table.getClass();
+		
+		Field[] fields = table.getClass().getDeclaredFields();
+		
+		System.out.println("---------Nome da Classe----- ");
+		System.out.println(clazz);
+		System.out.println("-------------- ");
+		System.out.println("------Campos da classe----- ");
+		for(Field field : fields ) {
+		 Class<?> type = field.getType();
+		 String nome = field.getName();
+		 System.out.println("TIPO----- ");
+		 System.out.println(type);
+		 System.out.println("NOME----- ");
+		 System.out.println(nome);
+		 }
+		
+		System.out.println("-------------- ");
+		
+		Annotation[]  annotations = table.getClass().getAnnotations();
+		
+		System.out.println("----------Tipo de anotação------");	
+		for(Annotation an :annotations ) {
+			
+			System.out.println("Tipo de anotação------");
+			System.out.println(an.annotationType());
+			System.out.println("Nome de anotação------");
+			System.out.println(an.annotationType().getName());
+			System.out.println("Valor anotação------");
+			System.out.println(an.toString());
+			
+		}
+	     
+		
+		
+		
+		
+		
+
 		 
-		 
-		 System.out.println(table.toString());
 		
 		
 		
