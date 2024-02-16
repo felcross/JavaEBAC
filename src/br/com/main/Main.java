@@ -3,6 +3,7 @@ package br.com.main;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Scanner;
+import java.util.function.BiFunction;
 
 import br.com.classe.Itabela;
 import br.com.classe.Tabela;
@@ -14,7 +15,15 @@ public class Main {
 		
 	
 		
-		Tabela table = new Tabela();
+	
+		
+	 
+		
+		
+
+		
+		
+		/*	Tabela table = new Tabela();
 		
 		Class clazz = table.getClass();
 		
@@ -47,7 +56,7 @@ public class Main {
 			System.out.println("Valor anotação------");
 			System.out.println(an.toString());
 			
-		}
+		}*/
 	     
 		
 		
@@ -102,10 +111,18 @@ public class Main {
 		
 	
 	  
-	 
+	Long resul = cal(1l,1l,(v1,v2)->{
+		return v1+v2;
 	
+	 });
 	
+	System.out.println(resul);
 	
+	}
+	
+	private static Long cal(Long t, Long u, BiFunction<Long,Long,Long> function ) {
+	   
+		return function.apply(t,u);
 	}
 	
 
