@@ -5,8 +5,7 @@ import java.lang.reflect.Field;
 import java.util.Scanner;
 import java.util.function.BiFunction;
 
-import br.com.classe.Itabela;
-import br.com.classe.Tabela;
+
 import br.com.media.Prova;
 
 public class Main {
