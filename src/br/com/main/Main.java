@@ -2,8 +2,11 @@ package br.com.main;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.function.BiFunction;
+import java.util.stream.Stream;
 
 import br.com.classe.Itabela;
 import br.com.classe.Tabela;
@@ -14,10 +17,16 @@ public class Main {
 	public static void main(String[] args) {
 		
 	
+		Stream<String> stream = List.of("fel","bat","sil").stream();
 		
+	  	Map<String,String> map = Map.of("fel","bat");
 	
 		
 	 
+		
+		
+		
+		
 		
 		
 
