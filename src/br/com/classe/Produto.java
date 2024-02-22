@@ -1,20 +1,20 @@
 package br.com.classe;
 
+import java.util.List;
+
 public class Produto {
 
 	
 	private Long Id;
-    private Long polegadas;
     private String descricao;
     private String marca;
 	
     
     
     
-    public Produto(Long id, Long polegadas, String descricao, String marca) {
+    public Produto(Long id, String descricao, String marca) {
 		super();
 		Id = id;
-		this.polegadas = polegadas;
 		this.descricao = descricao;
 		this.marca = marca;
 	}
@@ -25,12 +25,7 @@ public class Produto {
 	public void setId(Long id) {
 		Id = id;
 	}
-	public Long getPolegadas() {
-		return polegadas;
-	}
-	public void setPolegadas(Long polegadas) {
-		this.polegadas = polegadas;
-	}
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -44,7 +39,17 @@ public class Produto {
 		this.marca = marca;
 	};
     
-    
+    public List<Produto> populaProdutos()
+    {
+    	Produto prod1 = new Produto(1l,"TV","Samsung");
+    	Produto prod2 = new Produto(2l,"SmartPhone","Apple");
+    	Produto prod3 = new Produto(3l,"Carro","KIA");
+    	Produto prod4 = new Produto(4l,"Geladeira","Samsung");
+    	
+    	
+    	return List.of(prod1,prod2,prod3,prod4);
+    	
+    }
     
     
 }
