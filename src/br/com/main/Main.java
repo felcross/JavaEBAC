@@ -2,13 +2,15 @@ package br.com.main;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.function.BiFunction;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-
+import br.com.classe.Produto;
 import br.com.media.Prova;
 
 public class Main {
@@ -16,13 +18,51 @@ public class Main {
 	public static void main(String[] args) {
 		
 	
-		Stream<String> stream = List.of("fel","bat","sil").stream();
+		List<Produto> lista = new Produto().populaProdutos();
 		
-	  	Map<String,String> map = Map.of("fel","bat");
-	
+/*		Stream<String> stream = List.of("fel","bat","sil").stream();
 		
+	  	Map<String,String> map = Map.of("fel","bat");*/
+		
+		
+	   //  filtrando perante um
+	             lista.stream()
+				.filter(prod -> prod.getMarca().equals("Samsung"))
+				.map(Produto::getId)
+				.forEach(prod -> System.out.println("ID: " + prod));
+		
+		Long count =lista.stream()
+		            .filter(prod -> prod.getMarca().startsWith("S"))
+		            .count();
+		
+		System.out.println("Produtos Samsung: "+count);
+		
+		
+	  //MAP transformando e me dando um novo array com a condição  feita. 
+		Stream<Integer>  stream2 = lista
+				.stream()
+				.filter(prod -> prod.getMarca().equals("Samsung"))
+				.map(Produto::getId);
+		
+		
+	//map com intStream	
+		IntStream  stream3 = lista
+				.stream()
+				.filter(prod -> prod.getMarca().equals("Samsung"))
+				.mapToInt(Produto::getId);
 	 
+	//ordenação apenas com sorted vai usar o equals e hashcode
 		
+		Stream<Produto>  stream4 = lista.stream().sorted(Comparator.comparing(Produto::getId));
+	//mudando ordenação
+		Stream<Produto>  stream5 = lista.stream()
+				.sorted((p1,p2) -> Integer.compare(p1.getId(), p2.getId()));
+	//distinct deve aplicar o equals e hashcode pra definir. 
+		
+		Stream<Produto>  stream6 = lista.stream().distinct();
+		
+  //limit limitando a qtd que deve mostrar. 
+		Stream<Produto>  stream7 = lista.stream().limit(2);
 		
 		
 		
