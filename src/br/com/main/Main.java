@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.function.BiFunction;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -43,6 +44,14 @@ public class Main {
 				.stream()
 				.filter(prod -> prod.getMarca().equals("Samsung"))
 				.map(Produto::getId);
+		
+	//	collect
+		List<Produto>  stream8 = lista
+				.stream()
+				.filter(prod -> prod.getMarca().equals("Samsung"))
+				.collect(Collectors.toList());
+		
+		System.out.println("Collect" + stream8);
 		
 		
 	//map com intStream	

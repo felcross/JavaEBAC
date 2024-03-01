@@ -71,6 +71,11 @@ public class Produto {
 		Produto other = (Produto) obj;
 		return Objects.equals(Id, other.Id) && Objects.equals(descricao, other.descricao);
 	}
+
+	@Override
+	public String toString() {
+		return "Produto [Id=" + Id + ", descricao=" + descricao + ", marca=" + marca + "]";
+	}
     
     
 }
