@@ -9,11 +9,9 @@ public class PrimeiroTeste {
 
 	
 	@Test
-	 public void teste() {
-		TesteCliente cli = new TesteCliente();
+	 public void testeF(String nome) {
 		
-		cli.setNome("Jonas");
 		
-		 Assert.assertEquals("Jonas",cli.getNome());
+		 Assert.assertEquals("F",nome);
 	 }
 }

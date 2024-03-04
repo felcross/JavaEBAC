@@ -9,6 +9,7 @@ import java.util.function.BiFunction;
 import java.util.stream.Stream;
 
 import br.com.classe.Pessoa;
+import br.com.teste.PrimeiroTeste;
 
 
 public class Main4 {
@@ -18,13 +19,15 @@ public class Main4 {
         System.out.println("Para nomes femininos Coloque o -F no final "
         		            + "para indicar o grupo feminino");
         System.out.println("Para sair DIGITE FIM");
-        
+         
         while (true) {
             String nome = scanner.nextLine();
-            
+        	//String nome = "felipe-F";
             
             if(nome.endsWith("F")) {
+           
               List<String> resul = Separar(nome);
+             
               grupoFeminino(resul);
          
             	
@@ -43,9 +46,10 @@ public class Main4 {
        
        String nome1 = partesDoNome[0];
        String nome2 = partesDoNome[1];
-       
+        
        List<String> partesDoNome2 = new ArrayList<String>();
-       partesDoNome2.add(nome1);
+       partesDoNome2.add(nome1); 
+       System.out.println("tem f: "+ nome2);
        return partesDoNome2;                        		
            
     }
